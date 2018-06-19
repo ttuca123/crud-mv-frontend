@@ -1,0 +1,35 @@
+
+
+<section style="padding:10px;" >     
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cpf</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Quantidade de Telefones</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pessoa of pessoas;"
+        [class.selected]="pessoa===selectedPessoa"         
+         >        
+        
+        <td scope="row">{{pessoa.id}}</td>
+        <td>{{pessoa.nome}}</td>
+        <td>{{pessoa.email}}</td>
+        <td>{{pessoa.cpf}}</td>
+        <td>{{pessoa.idade}} anos</td>        
+        <td>{{pessoa.telefones.length}}</td>                      
+        <td><button routerLink="pessoa-cadastro/{{pessoa.id}}"  type="button" class="btn btn-light">Editar</button>
+          &nbsp;
+        <button type="button" class="btn btn-danger" (click)="remover(pessoa)">Deletar</button></td>
+      </tr>    
+      
+    </tbody>
+  </table>
+</section>
+

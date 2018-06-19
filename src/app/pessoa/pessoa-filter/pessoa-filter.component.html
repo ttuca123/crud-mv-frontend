@@ -1,0 +1,27 @@
+
+<section style="padding:10px;">
+    <div class="alert alert-dark" role="alert">
+        <H3>Listagem de Pessoas</H3>
+      </div>  
+<form >
+  <div class="form-group">
+      <label for="nome">Nome</label>
+      &nbsp;
+      <input type="text"  id="nome" aria-describedby="nomeHelp" placeholder="">
+      &nbsp;
+      <label for="cpf">Cpf</label>
+      &nbsp;
+      <input type="number"  id="cpf" aria-describedby="cpfHelp" placeholder="">
+        
+      &nbsp;  
+  
+      <button type="submit" class="btn btn-outline-info">Pesquisar</button>
+      &nbsp;
+      <a class="btn btn-outline-primary" routerLink="pessoa-cadastro">Cadastrar</a>
+
+    </div>
+    <router-outlet></router-outlet>
+</form>
+<app-pessoa-lista></app-pessoa-lista>
+
+</section>

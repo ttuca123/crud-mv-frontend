@@ -1,0 +1,49 @@
+
+<hr /> 
+
+  
+  <div class="form-group">
+      
+      <label for="ddd">DDD</label>
+        &nbsp;
+        <input type="number"  
+          id="ddd"  [(ngModel)]="telefone.ddd" name="ddd"
+          aria-describedby="dddHelp" placeholder="" >
+
+        &nbsp;
+        <label for="telefone">Telefone</label>
+        &nbsp;
+        <input type="number" required [(ngModel)]="telefone.numero" 
+        id="telefone" aria-describedby="telefoneHelp" placeholder="" name="telefone">
+        &nbsp;
+        <button type="submit" class="btn btn-outline-success" (click)="adicionar()">Adicionar</button> 
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">DDD</th>
+                <th scope="col">Número</th>                
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let telefone of telefones; index as indice"
+              [class.selected]="telefone===selectedTelefone" 
+              (click) = "onSelect(telefone)" >        
+              
+              <td scope="row">{{indice+1}}</td>
+              <td>{{telefone.ddd}}</td>
+              <td>{{telefone.numero}}</td>        
+              <td>          
+              <button type="button" (click)="remover(telefone)" class="btn btn-danger">Deletar</button></td>
+            </tr> 
+            </tbody>
+            </table>
+
+           
+    </div>    
+
+
+
+
+  
